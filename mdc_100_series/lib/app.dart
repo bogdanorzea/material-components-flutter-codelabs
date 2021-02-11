@@ -53,32 +53,24 @@ final ThemeData _kShrineTheme = _buildShrineTheme();
 ThemeData _buildShrineTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
-    accentColor: kShrineBrown900,
-    primaryColor: kShrinePink100,
+    primaryColor: kShrinePurple,
     buttonTheme: base.buttonTheme.copyWith(
-      buttonColor: kShrinePink100,
-      colorScheme: base.colorScheme.copyWith(
-        secondary: kShrineBrown900,
-      ),
+      buttonColor: kShrinePurple,
+      textTheme: ButtonTextTheme.primary,
+      colorScheme: ColorScheme.light().copyWith(primary: kShrinePurple)
     ),
-    buttonBarTheme: base.buttonBarTheme.copyWith(
-      buttonTextTheme: ButtonTextTheme.accent,
-    ),
-    scaffoldBackgroundColor: kShrineBackgroundWhite,
-    cardColor: kShrineBackgroundWhite,
-    textSelectionTheme: base.textSelectionTheme.copyWith(
-      selectionColor: kShrinePink100,
-    ),
-    errorColor: kShrineErrorRed,
+    scaffoldBackgroundColor: kShrineSurfaceWhite,
     textTheme: _buildShrineTextTheme(base.textTheme),
     primaryTextTheme: _buildShrineTextTheme(base.primaryTextTheme),
     accentTextTheme: _buildShrineTextTheme(base.accentTextTheme),
-    primaryIconTheme: base.iconTheme.copyWith(color: kShrineBrown900),
+    primaryIconTheme: base.iconTheme.copyWith(
+      color: kShrineSurfaceWhite
+    ),
     inputDecorationTheme: InputDecorationTheme(
       focusedBorder: CutCornersBorder(
         borderSide: BorderSide(
           width: 2.0,
-          color: kShrineBrown900,
+          color: kShrinePurple,
         ),
       ),
       border: CutCornersBorder(),
@@ -86,11 +78,11 @@ ThemeData _buildShrineTheme() {
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
       primary: kShrinePink100,
-      onPrimary: kShrineBrown900,
+      onPrimary: kShrinePurple,
     )),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        primary: kShrineBrown900,
+        primary: kShrinePurple,
       ),
     ),
   );
@@ -114,7 +106,5 @@ TextTheme _buildShrineTextTheme(TextTheme base) {
       )
       .apply(
         fontFamily: 'Rubik',
-        displayColor: kShrineBrown900,
-        bodyColor: kShrineBrown900,
       );
 }
